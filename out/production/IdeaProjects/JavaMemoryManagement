@@ -1,0 +1,67 @@
+*****************JAVA MEMORY MANAGEMENT**************
+a) Java Memory Management is usually done by JVM(java virtual machine).
+
+b) Java memory management is divided into two major parts
+    1. Stack Memory 2. Heap Memory
+
+eg: public class test{
+int a,b;
+psvm()
+{
+Test t1 = new test(); - //new test();-object , t1 -> Referrence Variable
+Static int age;
+
+public void m1(){
+int x=10; //local variable
+}
+
+public void m2(){
+int y=20; //local variable
+}
+
+public void m3(){
+int z=30; //local variable
+}
+}
+
+
+            HEAP MEMORY                                         STACK MEMORY
+      ______________                                               _________
+     | int a ,int b |                                             |   t1    | <- reference variable also would be stored in the stack
+     |              |                                             |_________|
+     |              |                                              _________
+     |              |                         Deallocating     -->| m3,x= 30|    <-- Allocating
+     |              |                                             |_________|
+     |              |                                              _________
+     |              |                         Deallocating     -->| m2, y=20|    <-- Allocating     (Methods and Local Variables)
+     |              |                                             |_________|
+     |              |                                              _________
+     |              |                                             |m1, x=10 |
+     |              |                        Deallocating     -->|_________|    <-- Allocating
+     |______________|
+
+     ____________________
+     | METASPACE         |
+     |static int age=0;  |
+     |Static void methods|
+     |-----------------  |
+
+1. Stack Memory (LIFO - Last in First out Concept)
+Here the reference variable all the non static Methods local variables of non static methods will be Auto allocated and deallocated in LIFO manner
+Once they are called the last variable to be allocated will first be destroyed like m3 -->m2-->m1.
+
+2. Heap Memory
+   In the Heap memory whatever the class instance variable we have like int a, int b will be stored over here
+   ANd in the metaspace we have static variables and static void methods.
+
+Interview Question - Difference between Stack Memory and Heap Memory
+
+                                    STACK                                                HEAP
+1. Storage                     Methods/ Local Variable/ references           Newly created objects
+2. Order                       LIFO (Last in first out)                    complex mechanism like eden, survivor 1/2,Garbage collector
+3. Life                        Current Method                              Maintained throughout the application/program
+4. Efficiency                   Faster than heap                            Slower than Stack
+5.Allocation/Deallocation        Automatic allocation - Whenever a method    created objects - allocation
+                                  is called / returned                        Deallocation -> Garbage collector -> destroys objects when there is no reference or Null reference.
+
+

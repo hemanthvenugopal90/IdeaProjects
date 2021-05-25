@@ -23,11 +23,11 @@ public class CallByValueAndCallByRef {
     }
 
    // call by value
-   public int testsum(int a,int b){ // we are passing an updated copy of these values in the main method
+   public int testsum(int a, int b){ // we are passing an updated copy of these values in the main method
         a = 20;
         b = 30;
       int c = a+b;
-        return c;
+       return c;
    }
 
    // Call by ref

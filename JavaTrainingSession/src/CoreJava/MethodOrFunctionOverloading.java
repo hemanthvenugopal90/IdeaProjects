@@ -26,6 +26,7 @@ public class MethodOrFunctionOverloading {
         obj.sum();
         obj.sum(15);
         obj.sum(30,40);
+        obj.sum(3.5);
 
     }
 

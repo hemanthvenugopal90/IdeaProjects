@@ -4,10 +4,11 @@ public class FunctionsOrMethodsInJava {
 
     //Main Method is starting point of execution.
     //Main Method is a static method
-    // Why Main method is void?? - Because it never returns a value
-    public static void main(String[] args) {
-
+    // Why Main method is void?? - Void does not return a value... main method does not return any value , hence it is void.
+    public static void main(String[] args) { //main() is also a method. Functions are independent to each other. We cannot create a method inside a method. So other methods should be created outside of main().
+         //Java will execute main() by default. other methods outside of main() should be called by creating instance of an object.
         FunctionsOrMethodsInJava obj=new FunctionsOrMethodsInJava();
+        //new FunctionsOrMethodsInJava(); - this is the object
         //one object will be created,obj is the reference variable,referring to this object.
         //After creating the object, the copy of all non static methods will be given to this object
         // Objects cannot own Static Methods like Main(), Objects own only non static methods below
@@ -44,7 +45,7 @@ public class FunctionsOrMethodsInJava {
             int a = 15;
             int b = 20;
             int c = a + b;
-            return c;
+            return c; //since your returning c which is integer hence we need to use return type as int in the method.
         }
         //return type ->String
         public String testnew1(){ // no input some output

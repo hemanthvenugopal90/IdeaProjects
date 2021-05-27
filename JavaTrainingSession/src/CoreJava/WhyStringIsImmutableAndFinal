@@ -1,0 +1,28 @@
+Interview Question
+
+Why String is immutable and Final in Java?
+
+1. String Pool in Java
+
+2.Security
+
+3. Class Loading Mechanism
+
+4. Optimization and performance
+
+5. integer,long,doublke,float - Wrapper Classes - immutable and final.
+
+The String is immutable in Java because of the security, synchronization and concurrency, caching, and class loading.
+The reason of making string final is to destroy the immutability and to not allow others to extend it.
+The String objects are cached in the String pool, and it makes the String immutable.
+
+
+Below are a few advantages of an immutable class:
+String Pool Requirement. String pool is a specific storage area for string objects. ...
+Caching KEY. Since a string object is immutable, its hashcode is cached at the time of creation so that it can be used multiple times without calculation. ...
+Security. ...
+Thread-safe.
+
+
+Because java uses the concept of string literal. Suppose there are 5 reference variables,all referes to one object "sachin".
+If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.
